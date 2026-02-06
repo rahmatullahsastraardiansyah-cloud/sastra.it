@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kreasi Photobox</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* === GALERI PHOTOBOX === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h3>Photobox</h3>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="kreasi.html" class="active">Kreasi</a></li>
+    <li><a href="pengguna.html">Pembeli</a></li>
+    <li><a href="../../project_pkl/bulan2/dashboard.html">Log out</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+<h2>Hasil Kreasi Photobox</h2>
+<p style="opacity:.7">Koleksi hasil photobox pilihan</p>
+
+<div class="gallery">
+  <img src="img/image1.jpg">
+  <img src="img/image2.jpg">
+  <img src="img/image3.jpg">
+  <img src="img/image4.jpg">
+  <img src="img/image5.jpg">
+
+</div>
+
+</div>
+
+</body>
+</html>

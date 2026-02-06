@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard || Biodata</title>
+<link rel="icon" type="img/jpg" href="../img/icon.png">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f4f6f8;
+  height:100vh;
+  overflow:hidden; /* body tidak ikut scroll */
+}
+
+.app{
+  display:flex;
+  height:100vh;
+}
+
+/* SIDEBAR (DI-LOCK / FIXED) */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:200px;
+  height:100vh;
+  background:#ffffff;
+  padding:20px;
+  box-shadow:2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2{
+  margin-bottom:20px;
+}
+
+.sidebar a{
+  display:block;
+  color:#333;
+  text-decoration:none;
+  margin-bottom:12px;
+}
+
+/* MAIN (BISA SCROLL) */
+.main{
+  margin-left:200px; /* ruang sidebar */
+  flex:1;
+  padding:25px;
+  height:100vh;
+  overflow-y:auto;
+}
+
+/* BANNER VIDEO */
+.banner{
+  position:relative;
+  height:260px;
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.banner video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.banner-text{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  padding:30px;
+}
+
+.banner-text h1{
+  margin-bottom:6px;
+}
+
+/* CARD */
+.card{
+  background:#ffffff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom:20px;
+}
+
+/* BIODATA */
+.profile{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:20px;
+}
+
+.profile img{
+  width:150px;
+  border-radius:10px;
+}
+
+.data{
+  display:grid;
+  grid-template-columns:130px 10px 1fr;
+  row-gap:8px;
+  font-size:14px;
+}
+
+.section h3{
+  margin-bottom:10px;
+}
+
+.section ul{
+  margin-left:18px;
+  line-height:1.6;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="../bulan2/dashboard.html">Dashboard</a>
+    <a href="../bulan1/Biodata.html">Bio data</a>
+    <a href="../bulan2/script.html">Table</a>
+    <a href="#">Profil</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- BANNER -->
+    <div class="banner">
+      <video autoplay muted loop>
+        <source src="../video/biodata.mp4" type="video/mp4">
+      </video>
+      <div class="banner-text">
+        <h1>Biodata Diri</h1>
+        <p>Profil siswa SMK</p>
+      </div>
+    </div>
+
+    <!-- BIODATA -->
+    <div class="card">
+      <div class="profile">
+        <img src="../img/myfoto.jpg" alt="Foto">
+        <div class="data">
+          <div>Nama</div><div>:</div><div>Rahmatullah Sastra Ardiansyah</div>
+          <div>Tempat</div><div>:</div><div>Sidoarjo</div>
+          <div>Tgl. Lahir</div><div>:</div><div>18 Desember 2008</div>
+          <div>Agama</div><div>:</div><div>Islam</div>
+          <div>Alamat</div><div>:</div><div>Jl. Sirapan, Krian</div>
+          <div>Email</div><div>:</div><div>rahmatullahsastraardiansyah@gmail.com</div>
+          <div>No. HP</div><div>:</div><div>+62 838-7355-1282</div>
+          <div>Sekolah</div><div>:</div><div>SMK Krian 1 Sidoarjo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h3>Tentang Saya</h3>
+      <ul>
+        <li>Siswa SMK jurusan Rekayasa Perangkat Lunak, terbiasa menggunakan PowerPoint dan desain grafis serta menyukai tantangan baru.</li>
+      </ul>
+    </div>
+
+    <div class="card section">
+      <h3>Pendidikan</h3>
+      <ul>
+        <li>SD Kemangsen 2</li>
+        <li>SMP Negeri 1 Krian</li>
+        <li>SMK Krian 1 Sidoarjo</li>
+      </ul>
+    </div>
+
+    <div class="card section">
+      <h3>Skill</h3>
+      <ul>
+        <li>Desain Grafis</li>
+        <li>Microsoft PowerPoint</li>
+      </ul>
+    </div>
+
+    <div class="card section">
+      <h3>Pengalaman</h3>
+      <ul>
+        <li>Admin penjualan produk digital</li>
+        <li>Anggota OSIS</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

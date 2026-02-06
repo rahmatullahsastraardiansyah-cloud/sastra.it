@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #fff;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ),
+    url("home.jpg") center/cover no-repeat;
+    padding: 30px 80px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffd5;
+}
+
+/* BUTTON */
+.btn {
+    padding: 8px 18px;
+    border: 1px solid #00ffd5;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #00ffd5;
+    color: #000;
+}
+
+/* HERO CONTENT */
+.hero-content {
+    max-width: 600px;
+    margin-top: 150px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: #00ffd5;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #00ffd5;
+    color: #000;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #00c4a7;
+}

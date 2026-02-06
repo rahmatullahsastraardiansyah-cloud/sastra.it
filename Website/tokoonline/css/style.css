@@ -1,0 +1,90 @@
+.warna1 {
+    background-color: #0c0543;
+}
+
+.warna2 {
+    background-color: #1C6EA4;
+}
+
+.warna3 {
+    background-color: #33A1E0;
+}
+
+.warna4 {
+    background-color: #FFF9AF;
+}
+
+.banner {
+    height: 55vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.highlighted-kategori {
+    height: 250px;
+    border-radius: 40px;
+}
+
+.viva {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/viva.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kampung-eles{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/kampung-eles.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.brutal-legends{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/brutal-legens.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.no-decoration{
+    text-decoration: none;
+    color: white;
+}
+
+.no-decoration:hover{
+    color: #33A1E0;
+}
+
+.text-harga {
+    font-size: 20px;
+    color: #1C6EA4;
+}
+
+.image-box{
+    height: 250px;
+}
+
+.image-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-subscribe {
+    background-color: rgba(36, 34, 34, 0.7);
+}
+
+.content-subscribe a {
+    color: #FFF9AF;
+}
+
+.banner-produk {
+    height: 30vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/*.list-group a {
+    text-decoration: none;
+} */
+

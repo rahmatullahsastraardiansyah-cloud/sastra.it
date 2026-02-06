@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table Dashboard</title>
+<link rel="icon" type="img/png" href="../img/folde.jpg">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f4f6f8;
+  height:100vh;
+  overflow:hidden;
+}
+
+.app{
+  display:flex;
+  height:100vh;
+}
+
+/* SIDEBAR (LOCK) */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:200px;
+  height:100vh;
+  background:#ffffff;
+  padding:20px;
+  box-shadow:2px 0 10px rgba(0,0,0,0.05);
+}
+.sidebar h2{
+  margin-bottom:20px;
+}
+.sidebar a{
+  display:block;
+  color:#333;
+  text-decoration:none;
+  margin-bottom:12px;
+}
+
+/* MAIN */
+.main{
+  margin-left:200px;
+  flex:1;
+  padding:25px;
+  height:100vh;
+  overflow-y:auto;
+}
+
+/* BANNER VIDEO */
+.banner{
+  position:relative;
+  height:240px;
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+.banner video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+.banner-text{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  padding:30px;
+}
+.banner-text h1{
+  margin-bottom:6px;
+}
+
+/* CARD */
+.card{
+  background:#ffffff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+button{
+  margin:5px 5px 15px 0;
+  padding:8px 14px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  background:#00e5ff;
+  font-weight:600;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0 8px;
+}
+th{
+  background:#00bcd4;
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+}
+td{
+  background:#f9f9f9;
+  padding:10px;
+  text-align:center;
+  border-radius:8px;
+}
+tr.selected td{
+  background:#7ad9ffb2;
+}
+
+/* INFO */
+#info{
+  background:#00e5ff;
+  width:260px;
+  color:#000;
+  text-align:center;
+  border-radius:8px;
+  padding:8px;
+  margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="../bulan2/dashboard.html">Dashboard</a>
+    <a href="../bulan1/Biodata.html">Bio data</a>
+    <a href="../bulan2/script.html">Table</a>
+    <a href="#">Profil</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- BANNER -->
+    <div class="banner">
+      <video autoplay muted loop>
+        <source src="../video/table.mp4" type="video/mp4">
+      </video>
+      <div class="banner-text">
+        <h1>Data Table</h1>
+        <p>Manajemen data menggunakan DOM</p>
+      </div>
+    </div>
+
+    <!-- TABLE CARD -->
+    <div class="card">
+
+      <button onclick="edit()">Edit</button>
+      <button onclick="save()">Save</button>
+      <button onclick="hapus()">Hapus</button>
+      <button onclick="tambah()">Tambah</button>
+
+      <p id="info">Klik baris yang anda pilih</p>
+
+      <table id="tabel">
+        <tr>
+          <th>Nama</th>
+          <th>Umur</th>
+          <th>Sekolah</th>
+          <th>Tahun Ajaran</th>
+        </tr>
+
+        <tr onclick="pilih(this)">
+          <td>Rahmatullah Sastra Ardiansyah</td>
+          <td>17</td>
+          <td>SMK KRIAN 1 SIDOARJO</td>
+          <td>2024 - 2027</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<script>
+let barisDipilih = null;
+
+function pilih(row){
+  document.querySelectorAll("#tabel tr").forEach(r=>r.classList.remove("selected"));
+  barisDipilih = row;
+  row.classList.add("selected");
+  info.innerText="Baris dipilih";
+}
+
+function tambah(){
+  let row=tabel.insertRow(-1);
+  row.onclick=()=>pilih(row);
+  row.insertCell(0).innerHTML="<input type='text'>";
+  row.insertCell(1).innerHTML="<input type='number'>";
+  row.insertCell(2).innerHTML="<input type='text'>";
+  row.insertCell(3).innerHTML="<input type='text'>";
+}
+
+function edit(){
+  if(!barisDipilih) return alert("Pilih baris terlebih dahulu");
+  if(barisDipilih.cells[0].children.length) return;
+
+  [...barisDipilih.cells].forEach(td=>{
+    td.innerHTML=`<input type="text" value="${td.innerText}">`;
+  });
+}
+
+function save(){
+  if(!barisDipilih) return alert("Pilih baris terlebih dahulu");
+  [...barisDipilih.cells].forEach(td=>{
+    td.innerText=td.children[0].value;
+  });
+}
+
+function hapus(){
+  if(!barisDipilih) return alert("Pilih baris terlebih dahulu");
+  barisDipilih.remove();
+  barisDipilih=null;
+  info.innerText="Klik baris yang anda pilih";
+}
+</script>
+
+</body>
+</html>

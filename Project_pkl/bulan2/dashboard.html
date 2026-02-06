@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="icon" type="img/png" href="../img/home.jpg">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f6f8;
+      height:100vh;
+      overflow:hidden; /* biar body ga ikut scroll */
+    }
+
+    .app{
+      display:flex;
+      height:100vh;
+    }
+
+    /* SIDEBAR DI-LOCK */
+    .sidebar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:200px;
+      height:100vh;
+      background:#ffffff;
+      padding:20px;
+      box-shadow:2px 0 10px rgba(0,0,0,0.05);
+    }
+
+    .sidebar h2{
+      margin-bottom:20px;
+    }
+
+    .sidebar a{
+      display:block;
+      color:#333;
+      text-decoration:none;
+      margin-bottom:12px;
+    }
+
+    /* MAIN BISA SCROLL */
+    .main{
+      margin-left:200px; /* ngasih ruang buat sidebar */
+      flex:1;
+      padding:25px;
+      height:100vh;
+      overflow-y:auto;
+    }
+
+    /* BANNER VIDEO */
+    .banner{
+      position:relative;
+      height:260px;
+      border-radius:12px;
+      overflow:hidden;
+      margin-bottom:20px;
+    }
+
+    .banner video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.5);
+    }
+
+    .banner-text{
+      position:relative;
+      z-index:1;
+      color:#fff;
+      padding:30px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+      gap:15px;
+      padding:10px;
+    }
+
+    .card{
+      background:white;
+      padding:15px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      text-align:center;
+    }
+
+    .card a{
+    text-decoration:none;
+    color:#333;
+    display:block;
+    width:100%;
+    height:100%;
+    }
+
+    .card:hover{
+      transform: translateY(-4px);
+      transition: 0.2s;
+      background:#f0f8ff;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR (TETAP DI TEMPAT) -->
+    <div class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="../bulan2/dashboard.html">Dashboard</a>
+    <a href="../bulan1/Biodata.html">Bio data</a>
+    <a href="../bulan2/script.html">Table</a>
+    <a href="#">Profil</a>
+  </div>
+
+    <!-- MAIN (BISA SCROLL) -->
+    <div class="main">
+
+      <div class="banner">
+        <video autoplay muted loop>
+          <source src="../video/dashboard.mp4" type="video/mp4">
+        </video>
+        <div class="banner-text">
+          <h1>Welcome To Dashboard Admin</h1>
+          <p>Konten bebas / custom sesuai kebutuhan</p>
+        </div>
+      </div>
+
+      <h3>List Data</h3>
+<div class="cards">
+
+  <div class="card">
+    <a href="../../website/tokoonline/adminpanel/index.php">
+      Toko Online
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="../../website/photobox/index.html">
+      Photobox
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="../../website/portofolioo/index.html">
+      Portofolio
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="../../website/pendaftaraansiswa/index.php">
+      Pendaftaraan Siswa
+    </a>
+  </div>
+
+</div>
+
+
+    </div>
+  </div>
+</body>
+</html>

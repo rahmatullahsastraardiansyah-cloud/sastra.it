@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri Pengguna</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .rank-list {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .rank-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg,#1d0b3a,#3a1c71);
+      padding: 18px 22px;
+      border-radius: 18px;
+      color: white;
+    }
+
+    .rank-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .rank-number {
+      font-size: 22px;
+      font-weight: bold;
+      width: 35px;
+      text-align: center;
+    }
+
+    .rank-name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .rank-money {
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    /* HIGHLIGHT JUARA */
+    .rank-1 { border: 2px solid gold; }
+    .rank-2 { border: 2px solid silver; }
+    .rank-3 { border: 2px solid #cd7f32; }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <h3>Photobox</h3>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="kreasi.html">Kreasi</a></li>
+    <li><a href="pengguna.html" class="active">Pembeli</a></li>
+   <li><a href="../../project_pkl/bulan2/dashboard.html">Log out</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h2>Top Pembeli Photobox</h2>
+  <p style="opacity:.7">Pengguna dengan total pembelian tertinggi</p>
+
+  <div class="rank-list">
+
+    <div class="rank-item rank-1">
+      <div class="rank-left">
+        <div class="rank-number">🥇</div>
+        <div class="rank-name">NoblesseX</div>
+      </div>
+      <div class="rank-money">Rp 10.000.000</div>
+    </div>
+
+    <div class="rank-item rank-2">
+      <div class="rank-left">
+        <div class="rank-number">🥈</div>
+        <div class="rank-name">Saza</div>
+      </div>
+      <div class="rank-money">Rp 200.000</div>
+    </div>
+
+    <div class="rank-item rank-3">
+      <div class="rank-left">
+        <div class="rank-number">🥉</div>
+        <div class="rank-name">Zasa</div>
+      </div>
+      <div class="rank-money">Rp 100.000</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
